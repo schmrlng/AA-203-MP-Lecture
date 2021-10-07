@@ -35,7 +35,9 @@ G = D.*A;
 G = sparse(max(G, G'));
 
 goal_pts = find(arrayfun(@(x,y) inpolygon(x, y, goal(1,:), goal(2,:)), V(1,1:N), V(2,1:N)));
-[C, P, ~] = graphshortestpath(G, 1, goal_pts);
+[C_all, P_all, ~] = graphshortestpath(G, 1);
+C = C_all(goal_pts);
+P = P_all(goal_pts);
 [c, min_idx] = min(C);
 if iscell(P)
     P = P{min_idx};

@@ -47,7 +47,7 @@ title(sprintf('RRT c = %2f  N = %d', c/c_opt, N),'FontSize',18);
 figure(2)
 Nmax = 500;
 tic
-[c, N, ~] = RRTstar(start, goal, obstacles, Nmax, 0)
+[c, N, ~] = RRTstar(start, goal, obstacles, Nmax, 1)
 toc
 title(sprintf('RRT* c = %2f  N = %d', c/c_opt, N),'FontSize',18);
 
@@ -55,7 +55,7 @@ title(sprintf('RRT* c = %2f  N = %d', c/c_opt, N),'FontSize',18);
 figure(3)
 Nmax = 500;
 tic
-[c, N, ~] = PRMstar(start, goal, obstacles, Nmax, 1.5, 0)
+[c, N, ~] = PRMstar(start, goal, obstacles, Nmax, 1.5, 1)
 toc
 title(sprintf('PRM* c = %2f  N = %d', c/c_opt, N),'FontSize',18);
 
@@ -63,6 +63,6 @@ title(sprintf('PRM* c = %2f  N = %d', c/c_opt, N),'FontSize',18);
 figure(4)
 Nmax = 500;
 tic
-[c, N, ~] = FMTstar(start, goal, obstacles, Nmax, 1.5, 0)
+[c, N, ~] = FMTstar(start, goal, obstacles, Nmax, 1.5, 1)
 toc
 title(sprintf('FMT* c = %2f  N = %d', c/c_opt, N),'FontSize',18);
